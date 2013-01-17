@@ -6,17 +6,76 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		E1AC8E7D16A87523009BDD77 /* Install FDHapticDevice */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = E1AC8E7E16A87523009BDD77 /* Build configuration list for PBXAggregateTarget "Install FDHapticDevice" */;
+			buildPhases = (
+				E1AC8E8216A87531009BDD77 /* CopyFiles */,
+			);
+			dependencies = (
+				E1AC8E8116A8752C009BDD77 /* PBXTargetDependency */,
+			);
+			name = "Install FDHapticDevice";
+			productName = "Install FDHapticDevice";
+		};
+		E1AC8E8416A875C8009BDD77 /* Everything */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = E1AC8E8516A875C8009BDD77 /* Build configuration list for PBXAggregateTarget "Everything" */;
+			buildPhases = (
+			);
+			dependencies = (
+				E1AC8E8816A875D1009BDD77 /* PBXTargetDependency */,
+			);
+			name = Everything;
+			productName = Everything;
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
-		E1AC8E6B16A871E4009BDD77 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1AC8E6A16A871E4009BDD77 /* CoreFoundation.framework */; };
 		E1AC8E7116A871E4009BDD77 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E1AC8E6F16A871E4009BDD77 /* InfoPlist.strings */; };
+		E1AC8E7C16A87475009BDD77 /* MWorksCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1AC8E7B16A87475009BDD77 /* MWorksCore.framework */; };
+		E1AC8E8316A87536009BDD77 /* FDHapticDevice.bundle in CopyFiles */ = {isa = PBXBuildFile; fileRef = E1AC8E6716A871E4009BDD77 /* FDHapticDevice.bundle */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E1AC8E8016A8752C009BDD77 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E1AC8E5E16A871E3009BDD77 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E1AC8E6616A871E4009BDD77;
+			remoteInfo = FDHapticDevice;
+		};
+		E1AC8E8716A875D1009BDD77 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E1AC8E5E16A871E3009BDD77 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E1AC8E7D16A87523009BDD77;
+			remoteInfo = "Install FDHapticDevice";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		E1AC8E8216A87531009BDD77 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(MW_PLUGINS_DIR)";
+			dstSubfolderSpec = 0;
+			files = (
+				E1AC8E8316A87536009BDD77 /* FDHapticDevice.bundle in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		E1AC8E6716A871E4009BDD77 /* FDHapticDevice.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FDHapticDevice.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
-		E1AC8E6A16A871E4009BDD77 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		E1AC8E6E16A871E4009BDD77 /* FDHapticDevice-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FDHapticDevice-Info.plist"; sourceTree = "<group>"; };
 		E1AC8E7016A871E4009BDD77 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		E1AC8E7216A871E4009BDD77 /* FDHapticDevice-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FDHapticDevice-Prefix.pch"; sourceTree = "<group>"; };
+		E1AC8E7916A872D6009BDD77 /* Development.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = Development.xcconfig; path = "/Library/Application Support/MWorks/Developer/Xcode/Development.xcconfig"; sourceTree = "<absolute>"; };
+		E1AC8E7A16A872D6009BDD77 /* WARNING.txt */ = {isa = PBXFileReference; lastKnownFileType = text; name = WARNING.txt; path = "/Library/Application Support/MWorks/Developer/Xcode/WARNING.txt"; sourceTree = "<absolute>"; };
+		E1AC8E7B16A87475009BDD77 /* MWorksCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MWorksCore.framework; path = /Library/Frameworks/MWorksCore.framework; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -24,7 +83,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E1AC8E6B16A871E4009BDD77 /* CoreFoundation.framework in Frameworks */,
+				E1AC8E7C16A87475009BDD77 /* MWorksCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -34,6 +93,7 @@
 		E1AC8E5C16A871E3009BDD77 = {
 			isa = PBXGroup;
 			children = (
+				E1AC8E7816A872BA009BDD77 /* External Config */,
 				E1AC8E6C16A871E4009BDD77 /* FDHapticDevice */,
 				E1AC8E6916A871E4009BDD77 /* Frameworks */,
 				E1AC8E6816A871E4009BDD77 /* Products */,
@@ -51,7 +111,7 @@
 		E1AC8E6916A871E4009BDD77 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				E1AC8E6A16A871E4009BDD77 /* CoreFoundation.framework */,
+				E1AC8E7B16A87475009BDD77 /* MWorksCore.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -72,6 +132,15 @@
 				E1AC8E7216A871E4009BDD77 /* FDHapticDevice-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E1AC8E7816A872BA009BDD77 /* External Config */ = {
+			isa = PBXGroup;
+			children = (
+				E1AC8E7916A872D6009BDD77 /* Development.xcconfig */,
+				E1AC8E7A16A872D6009BDD77 /* WARNING.txt */,
+			);
+			name = "External Config";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -116,6 +185,8 @@
 			projectRoot = "";
 			targets = (
 				E1AC8E6616A871E4009BDD77 /* FDHapticDevice */,
+				E1AC8E7D16A87523009BDD77 /* Install FDHapticDevice */,
+				E1AC8E8416A875C8009BDD77 /* Everything */,
 			);
 		};
 /* End PBXProject section */
@@ -141,6 +212,19 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		E1AC8E8116A8752C009BDD77 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E1AC8E6616A871E4009BDD77 /* FDHapticDevice */;
+			targetProxy = E1AC8E8016A8752C009BDD77 /* PBXContainerItemProxy */;
+		};
+		E1AC8E8816A875D1009BDD77 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E1AC8E7D16A87523009BDD77 /* Install FDHapticDevice */;
+			targetProxy = E1AC8E8716A875D1009BDD77 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		E1AC8E6F16A871E4009BDD77 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
@@ -153,16 +237,14 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		E1AC8E7316A871E4009BDD77 /* Debug */ = {
+		E1AC8E7316A871E4009BDD77 /* Development */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E1AC8E7916A872D6009BDD77 /* Development.xcconfig */;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
@@ -176,59 +258,33 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.8;
-				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = macosx;
 			};
-			name = Debug;
+			name = Development;
 		};
-		E1AC8E7416A871E4009BDD77 /* Release */ = {
+		E1AC8E7616A871E4009BDD77 /* Development */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COPY_PHASE_STRIP = YES;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.8;
-				SDKROOT = macosx;
-			};
-			name = Release;
-		};
-		E1AC8E7616A871E4009BDD77 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FDHapticDevice/FDHapticDevice-Prefix.pch";
 				INFOPLIST_FILE = "FDHapticDevice/FDHapticDevice-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = bundle;
 			};
-			name = Debug;
+			name = Development;
 		};
-		E1AC8E7716A871E4009BDD77 /* Release */ = {
+		E1AC8E7F16A87523009BDD77 /* Development */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "FDHapticDevice/FDHapticDevice-Prefix.pch";
-				INFOPLIST_FILE = "FDHapticDevice/FDHapticDevice-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				WRAPPER_EXTENSION = bundle;
 			};
-			name = Release;
+			name = Development;
+		};
+		E1AC8E8616A875C8009BDD77 /* Development */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Development;
 		};
 /* End XCBuildConfiguration section */
 
@@ -236,17 +292,30 @@
 		E1AC8E6116A871E3009BDD77 /* Build configuration list for PBXProject "FDHapticDevice" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				E1AC8E7316A871E4009BDD77 /* Debug */,
-				E1AC8E7416A871E4009BDD77 /* Release */,
+				E1AC8E7316A871E4009BDD77 /* Development */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Development;
 		};
 		E1AC8E7516A871E4009BDD77 /* Build configuration list for PBXNativeTarget "FDHapticDevice" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				E1AC8E7616A871E4009BDD77 /* Debug */,
-				E1AC8E7716A871E4009BDD77 /* Release */,
+				E1AC8E7616A871E4009BDD77 /* Development */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Development;
+		};
+		E1AC8E7E16A87523009BDD77 /* Build configuration list for PBXAggregateTarget "Install FDHapticDevice" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E1AC8E7F16A87523009BDD77 /* Development */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		E1AC8E8516A875C8009BDD77 /* Build configuration list for PBXAggregateTarget "Everything" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E1AC8E8616A875C8009BDD77 /* Development */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
