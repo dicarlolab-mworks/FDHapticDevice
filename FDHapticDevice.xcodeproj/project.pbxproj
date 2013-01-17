@@ -36,6 +36,7 @@
 		E1AC8E7116A871E4009BDD77 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E1AC8E6F16A871E4009BDD77 /* InfoPlist.strings */; };
 		E1AC8E7C16A87475009BDD77 /* MWorksCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1AC8E7B16A87475009BDD77 /* MWorksCore.framework */; };
 		E1AC8E8316A87536009BDD77 /* FDHapticDevice.bundle in CopyFiles */ = {isa = PBXBuildFile; fileRef = E1AC8E6716A871E4009BDD77 /* FDHapticDevice.bundle */; };
+		E1AC8E8B16A878A6009BDD77 /* FDHapticDevicePlugin.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E1AC8E8916A878A6009BDD77 /* FDHapticDevicePlugin.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +77,7 @@
 		E1AC8E7916A872D6009BDD77 /* Development.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = Development.xcconfig; path = "/Library/Application Support/MWorks/Developer/Xcode/Development.xcconfig"; sourceTree = "<absolute>"; };
 		E1AC8E7A16A872D6009BDD77 /* WARNING.txt */ = {isa = PBXFileReference; lastKnownFileType = text; name = WARNING.txt; path = "/Library/Application Support/MWorks/Developer/Xcode/WARNING.txt"; sourceTree = "<absolute>"; };
 		E1AC8E7B16A87475009BDD77 /* MWorksCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MWorksCore.framework; path = /Library/Frameworks/MWorksCore.framework; sourceTree = "<absolute>"; };
+		E1AC8E8916A878A6009BDD77 /* FDHapticDevicePlugin.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FDHapticDevicePlugin.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +121,7 @@
 		E1AC8E6C16A871E4009BDD77 /* FDHapticDevice */ = {
 			isa = PBXGroup;
 			children = (
+				E1AC8E8916A878A6009BDD77 /* FDHapticDevicePlugin.cpp */,
 				E1AC8E6D16A871E4009BDD77 /* Supporting Files */,
 			);
 			path = FDHapticDevice;
@@ -207,6 +210,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1AC8E8B16A878A6009BDD77 /* FDHapticDevicePlugin.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -241,23 +245,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E1AC8E7916A872D6009BDD77 /* Development.xcconfig */;
 			buildSettings = {
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
 			};
 			name = Development;
 		};
