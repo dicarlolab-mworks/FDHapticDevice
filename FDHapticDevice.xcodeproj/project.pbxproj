@@ -39,6 +39,9 @@
 		E1AC8E8B16A878A6009BDD77 /* FDHapticDevicePlugin.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E1AC8E8916A878A6009BDD77 /* FDHapticDevicePlugin.cpp */; };
 		E1AC8EA416A8858B009BDD77 /* libdhd.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E1AC8EA216A8858B009BDD77 /* libdhd.a */; };
 		E1AC8EA516A8858B009BDD77 /* libdrd.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E1AC8EA316A8858B009BDD77 /* libdrd.a */; };
+		E1AC8EBD16A895F7009BDD77 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1AC8EBC16A895F7009BDD77 /* CoreFoundation.framework */; };
+		E1AC8EC016A895FF009BDD77 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1AC8EBF16A895FF009BDD77 /* IOKit.framework */; };
+		E1AC8ED416A89901009BDD77 /* FDHapticDevice.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E1AC8ED216A89901009BDD77 /* FDHapticDevice.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +85,10 @@
 		E1AC8E8916A878A6009BDD77 /* FDHapticDevicePlugin.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FDHapticDevicePlugin.cpp; sourceTree = "<group>"; };
 		E1AC8EA216A8858B009BDD77 /* libdhd.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libdhd.a; path = sdk/build/libdhd.a; sourceTree = SOURCE_ROOT; };
 		E1AC8EA316A8858B009BDD77 /* libdrd.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libdrd.a; path = sdk/build/libdrd.a; sourceTree = SOURCE_ROOT; };
+		E1AC8EBC16A895F7009BDD77 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = /System/Library/Frameworks/CoreFoundation.framework; sourceTree = "<absolute>"; };
+		E1AC8EBF16A895FF009BDD77 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = /System/Library/Frameworks/IOKit.framework; sourceTree = "<absolute>"; };
+		E1AC8ED216A89901009BDD77 /* FDHapticDevice.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FDHapticDevice.cpp; sourceTree = "<group>"; };
+		E1AC8ED316A89901009BDD77 /* FDHapticDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FDHapticDevice.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +96,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1AC8EBD16A895F7009BDD77 /* CoreFoundation.framework in Frameworks */,
+				E1AC8EC016A895FF009BDD77 /* IOKit.framework in Frameworks */,
 				E1AC8E7C16A87475009BDD77 /* MWorksCore.framework in Frameworks */,
 				E1AC8EA416A8858B009BDD77 /* libdhd.a in Frameworks */,
 				E1AC8EA516A8858B009BDD77 /* libdrd.a in Frameworks */,
@@ -119,6 +128,8 @@
 		E1AC8E6916A871E4009BDD77 /* Frameworks & Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				E1AC8EBC16A895F7009BDD77 /* CoreFoundation.framework */,
+				E1AC8EBF16A895FF009BDD77 /* IOKit.framework */,
 				E1AC8E7B16A87475009BDD77 /* MWorksCore.framework */,
 				E1AC8EA216A8858B009BDD77 /* libdhd.a */,
 				E1AC8EA316A8858B009BDD77 /* libdrd.a */,
@@ -129,6 +140,8 @@
 		E1AC8E6C16A871E4009BDD77 /* FDHapticDevice */ = {
 			isa = PBXGroup;
 			children = (
+				E1AC8ED316A89901009BDD77 /* FDHapticDevice.h */,
+				E1AC8ED216A89901009BDD77 /* FDHapticDevice.cpp */,
 				E1AC8E8916A878A6009BDD77 /* FDHapticDevicePlugin.cpp */,
 				E1AC8E6D16A871E4009BDD77 /* Supporting Files */,
 			);
@@ -219,6 +232,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E1AC8E8B16A878A6009BDD77 /* FDHapticDevicePlugin.cpp in Sources */,
+				E1AC8ED416A89901009BDD77 /* FDHapticDevice.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,6 +274,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				EXPORTED_SYMBOLS_FILE = "$(MW_XCODE_DIR)/CorePlugin.exp";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FDHapticDevice/FDHapticDevice-Prefix.pch";
 				INFOPLIST_FILE = "FDHapticDevice/FDHapticDevice-Info.plist";
