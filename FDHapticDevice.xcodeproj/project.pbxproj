@@ -1,0 +1,256 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E1AC8E6B16A871E4009BDD77 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1AC8E6A16A871E4009BDD77 /* CoreFoundation.framework */; };
+		E1AC8E7116A871E4009BDD77 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E1AC8E6F16A871E4009BDD77 /* InfoPlist.strings */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		E1AC8E6716A871E4009BDD77 /* FDHapticDevice.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FDHapticDevice.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		E1AC8E6A16A871E4009BDD77 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
+		E1AC8E6E16A871E4009BDD77 /* FDHapticDevice-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FDHapticDevice-Info.plist"; sourceTree = "<group>"; };
+		E1AC8E7016A871E4009BDD77 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		E1AC8E7216A871E4009BDD77 /* FDHapticDevice-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FDHapticDevice-Prefix.pch"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E1AC8E6416A871E4009BDD77 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E1AC8E6B16A871E4009BDD77 /* CoreFoundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E1AC8E5C16A871E3009BDD77 = {
+			isa = PBXGroup;
+			children = (
+				E1AC8E6C16A871E4009BDD77 /* FDHapticDevice */,
+				E1AC8E6916A871E4009BDD77 /* Frameworks */,
+				E1AC8E6816A871E4009BDD77 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E1AC8E6816A871E4009BDD77 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E1AC8E6716A871E4009BDD77 /* FDHapticDevice.bundle */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E1AC8E6916A871E4009BDD77 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E1AC8E6A16A871E4009BDD77 /* CoreFoundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E1AC8E6C16A871E4009BDD77 /* FDHapticDevice */ = {
+			isa = PBXGroup;
+			children = (
+				E1AC8E6D16A871E4009BDD77 /* Supporting Files */,
+			);
+			path = FDHapticDevice;
+			sourceTree = "<group>";
+		};
+		E1AC8E6D16A871E4009BDD77 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E1AC8E6E16A871E4009BDD77 /* FDHapticDevice-Info.plist */,
+				E1AC8E6F16A871E4009BDD77 /* InfoPlist.strings */,
+				E1AC8E7216A871E4009BDD77 /* FDHapticDevice-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E1AC8E6616A871E4009BDD77 /* FDHapticDevice */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E1AC8E7516A871E4009BDD77 /* Build configuration list for PBXNativeTarget "FDHapticDevice" */;
+			buildPhases = (
+				E1AC8E6316A871E4009BDD77 /* Sources */,
+				E1AC8E6416A871E4009BDD77 /* Frameworks */,
+				E1AC8E6516A871E4009BDD77 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FDHapticDevice;
+			productName = FDHapticDevice;
+			productReference = E1AC8E6716A871E4009BDD77 /* FDHapticDevice.bundle */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E1AC8E5E16A871E3009BDD77 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0450;
+				ORGANIZATIONNAME = "German Primate Center";
+			};
+			buildConfigurationList = E1AC8E6116A871E3009BDD77 /* Build configuration list for PBXProject "FDHapticDevice" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = E1AC8E5C16A871E3009BDD77;
+			productRefGroup = E1AC8E6816A871E4009BDD77 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E1AC8E6616A871E4009BDD77 /* FDHapticDevice */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E1AC8E6516A871E4009BDD77 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E1AC8E7116A871E4009BDD77 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E1AC8E6316A871E4009BDD77 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		E1AC8E6F16A871E4009BDD77 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E1AC8E7016A871E4009BDD77 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E1AC8E7316A871E4009BDD77 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		E1AC8E7416A871E4009BDD77 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		E1AC8E7616A871E4009BDD77 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FDHapticDevice/FDHapticDevice-Prefix.pch";
+				INFOPLIST_FILE = "FDHapticDevice/FDHapticDevice-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+		E1AC8E7716A871E4009BDD77 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FDHapticDevice/FDHapticDevice-Prefix.pch";
+				INFOPLIST_FILE = "FDHapticDevice/FDHapticDevice-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E1AC8E6116A871E3009BDD77 /* Build configuration list for PBXProject "FDHapticDevice" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E1AC8E7316A871E4009BDD77 /* Debug */,
+				E1AC8E7416A871E4009BDD77 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E1AC8E7516A871E4009BDD77 /* Build configuration list for PBXNativeTarget "FDHapticDevice" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E1AC8E7616A871E4009BDD77 /* Debug */,
+				E1AC8E7716A871E4009BDD77 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E1AC8E5E16A871E3009BDD77 /* Project object */;
+}
