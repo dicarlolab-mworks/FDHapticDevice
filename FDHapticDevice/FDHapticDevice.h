@@ -12,6 +12,7 @@
 #include <string>
 
 #include <boost/static_assert.hpp>
+#include <boost/thread/thread.hpp>
 #include <boost/type_traits/is_signed.hpp>
 
 using namespace mw;
@@ -35,7 +36,11 @@ private:
     
     static void logDHDError(const std::string &msg);
     
+    bool isRunning() const;
+    void runLoop();
+    
     char deviceID;
+    boost::thread runLoopThread;
     
 };
 
