@@ -275,8 +275,13 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				EXPORTED_SYMBOLS_FILE = "$(MW_XCODE_DIR)/CorePlugin.exp";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FDHapticDevice/FDHapticDevice-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"\"$(SRCROOT)/sdk/include\"",
+					"$(inherited)",
+				);
 				INFOPLIST_FILE = "FDHapticDevice/FDHapticDevice-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"\"$(SRCROOT)/sdk/build\"",
