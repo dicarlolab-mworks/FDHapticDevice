@@ -9,7 +9,6 @@
 #ifndef __FDHapticDevice__FDHapticDevice__
 #define __FDHapticDevice__FDHapticDevice__
 
-#include <string>
 #include <vector>
 
 #include <boost/static_assert.hpp>
@@ -22,6 +21,10 @@
 class FDHapticDevice : public IODevice {
     
 public:
+    static const std::string POS_X;
+    static const std::string POS_Y;
+    static const std::string POS_Z;
+    
     static void describeComponent(ComponentInfo &info);
     
     explicit FDHapticDevice(const ParameterValueMap &parameters);
@@ -40,6 +43,10 @@ private:
     
     bool isRunning() const;
     void runLoop();
+    
+    VariablePtr pos_x;
+    VariablePtr pos_y;
+    VariablePtr pos_z;
     
     std::vector< boost::shared_ptr<Force> > forceComponents;
     char deviceID;

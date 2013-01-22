@@ -9,12 +9,22 @@
 #include "Force.h"
 
 
+const std::string Force::ACTIVE("active");
+
+
 void Force::describeComponent(ComponentInfo &info) {
     Component::describeComponent(info);
+    info.addParameter(ACTIVE, "1");
 }
 
 
 Force::Force(const ParameterValueMap &parameters) :
-    Component(parameters)
+    Component(parameters),
+    active(parameters[ACTIVE])
 {
+}
+
+
+bool Force::isActive() const {
+    return active->getValue().getBool();
 }

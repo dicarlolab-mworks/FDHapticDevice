@@ -14,14 +14,27 @@
 #include "dhdc.h"
 
 
+const std::string FDHapticDevice::POS_X("pos_x");
+const std::string FDHapticDevice::POS_Y("pos_y");
+const std::string FDHapticDevice::POS_Z("pos_z");
+
+
 void FDHapticDevice::describeComponent(ComponentInfo &info) {
     IODevice::describeComponent(info);
+    
     info.setSignature("iodevice/fd_haptic_device");
+    
+    info.addParameter(POS_X);
+    info.addParameter(POS_Y);
+    info.addParameter(POS_Z);
 }
 
 
 FDHapticDevice::FDHapticDevice(const ParameterValueMap &parameters) :
     IODevice(parameters),
+    pos_x(parameters[POS_X]),
+    pos_y(parameters[POS_Y]),
+    pos_z(parameters[POS_Z]),
     deviceID(NO_DEVICE)
 {
 }
@@ -103,6 +116,11 @@ void FDHapticDevice::runLoop() {
             return;
         }
         
+        // Update position variables to reflect current position
+        pos_x->setValue(position.x());
+        pos_y->setValue(position.y());
+        pos_z->setValue(position.z());
+        
         Eigen::Vector3d velocity;
         if (dhdGetLinearVelocity(&(velocity.x()), &(velocity.y()), &(velocity.z()), deviceID) < 0) {
             logDHDError("Unable to get haptic device velocity");
@@ -112,7 +130,9 @@ void FDHapticDevice::runLoop() {
         Eigen::Vector3d force(0.0, 0.0, 0.0);
         
         BOOST_FOREACH(const boost::shared_ptr<Force> &fc, forceComponents) {
-            force += fc->getForce(position, velocity);
+            if (fc->isActive()) {
+                force += fc->getForce(position, velocity);
+            }
         }
         
         if (dhdSetForce(force.x(), force.y(), force.z(), deviceID) < 0) {
