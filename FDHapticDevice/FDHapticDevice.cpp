@@ -9,6 +9,7 @@
 #include "FDHapticDevice.h"
 
 #include <boost/bind.hpp>
+#include <boost/foreach.hpp>
 
 #include "dhdc.h"
 
@@ -55,7 +56,7 @@ bool FDHapticDevice::startDeviceIO() {
             runLoopThread = boost::thread(boost::bind(&FDHapticDevice::runLoop,
                                                       component_shared_from_this<FDHapticDevice>()));
         } catch (const boost::thread_resource_error &e) {
-            merror(M_IODEVICE_MESSAGE_DOMAIN, "Unable to start haptic device: %s", e.what());
+            logError("Unable to start haptic device", e.what());
             return false;
         }
     }
@@ -70,7 +71,7 @@ bool FDHapticDevice::stopDeviceIO() {
         try {
             runLoopThread.join();
         } catch (const boost::system::system_error &e) {
-            merror(M_IODEVICE_MESSAGE_DOMAIN, "Unable to stop haptic device: %s", e.what());
+            logError("Unable to stop haptic device", e.what());
             return false;
         }
     }
@@ -79,8 +80,13 @@ bool FDHapticDevice::stopDeviceIO() {
 }
 
 
-void FDHapticDevice::logDHDError(const std::string &msg) {
-    merror(M_IODEVICE_MESSAGE_DOMAIN, "%s: %s", msg.c_str(), dhdErrorGetLastStr());
+void FDHapticDevice::logError(const std::string &error, const std::string &reason) {
+    merror(M_IODEVICE_MESSAGE_DOMAIN, "%s: %s", error.c_str(), reason.c_str());
+}
+
+
+void FDHapticDevice::logDHDError(const std::string &error) {
+    logError(error, dhdErrorGetLastStr());
 }
 
 
@@ -91,7 +97,30 @@ bool FDHapticDevice::isRunning() const {
 
 void FDHapticDevice::runLoop() {
     while (true) {
-        // Do something
+        Eigen::Vector3d position;
+        if (dhdGetPosition(&(position.x()), &(position.y()), &(position.z()), deviceID) < 0) {
+            logDHDError("Unable to get haptic device position");
+            return;
+        }
+        
+        Eigen::Vector3d velocity;
+        if (dhdGetLinearVelocity(&(velocity.x()), &(velocity.y()), &(velocity.z()), deviceID) < 0) {
+            logDHDError("Unable to get haptic device velocity");
+            return;
+        }
+        
+        Eigen::Vector3d force(0.0, 0.0, 0.0);
+        
+        BOOST_FOREACH(const boost::shared_ptr<Force> &fc, forceComponents) {
+            force += fc->getForce(position, velocity);
+        }
+        
+        if (dhdSetForce(force.x(), force.y(), force.z(), deviceID) < 0) {
+            logDHDError("Unable to set haptic device force");
+            return;
+        }
+        
+        // Give another thread a chance to terminate this one
         boost::this_thread::interruption_point();
     }
 }

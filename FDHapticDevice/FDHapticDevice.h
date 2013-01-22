@@ -10,12 +10,13 @@
 #define __FDHapticDevice__FDHapticDevice__
 
 #include <string>
+#include <vector>
 
 #include <boost/static_assert.hpp>
 #include <boost/thread/thread.hpp>
 #include <boost/type_traits/is_signed.hpp>
 
-using namespace mw;
+#include "Force.h"
 
 
 class FDHapticDevice : public IODevice {
@@ -34,11 +35,13 @@ private:
     BOOST_STATIC_ASSERT(boost::is_signed<char>::value);
     static const char NO_DEVICE = -1;
     
-    static void logDHDError(const std::string &msg);
+    static void logError(const std::string &error, const std::string &reason);
+    static void logDHDError(const std::string &error);
     
     bool isRunning() const;
     void runLoop();
     
+    std::vector< boost::shared_ptr<Force> > forceComponents;
     char deviceID;
     boost::thread runLoopThread;
     
