@@ -1,0 +1,58 @@
+<MWElements>
+  
+  <MWElementGroup name="FD Haptic Device">
+    <icon>smallIOFolder</icon>
+    <description>
+      Force Dimension haptic device and associated force objects
+    </description>
+  </MWElementGroup>
+  
+  <MWElement name="Force Dimension Haptic Device">
+    <match_signature>iodevice[@type="fd_haptic_device"]</match_signature>
+    
+    <isa>IODevice</isa>
+
+    <belongs_to_group>FD Haptic Device</belongs_to_group>
+    
+    <description>
+      Interface to a Force Dimension haptic device
+    </description>
+    
+    <code>
+      <iodevice type="fd_haptic_device"
+                tag="Force Dimension Haptic Device"
+                pos_x=""
+                pos_y=""
+                pos_z=""
+                />
+    </code>
+  </MWElement>
+  
+  <MWElement name="FDHD Force" hidden="1">
+    <match_signature>dummy</match_signature>
+    <isa>IOChannel</isa>
+    <allowed_parent>Force Dimension Haptic Device</allowed_parent>
+    <belongs_to_group>FD Haptic Device</belongs_to_group>
+  </MWElement>
+  
+  <MWElement name="FDHD Fixed Force">
+    <match_signature>iochannel[@type="fd_haptic_device_fixed_force"]</match_signature>
+    
+    <isa>FDHD Force</isa>
+    
+    <description>
+      Force with constant magnitude and direction
+    </description>
+    
+    <code>
+      <iochannel type="fd_haptic_device_fixed_force"
+                 tag="FDHD Fixed Force"
+                 f_x=""
+                 f_y=""
+                 f_z=""
+                 active="1"
+             />
+    </code>
+  </MWElement>
+  
+</MWElements>

@@ -17,7 +17,7 @@ const std::string FixedForce::F_Z("f_z");
 void FixedForce::describeComponent(ComponentInfo &info) {
     Force::describeComponent(info);
     
-    info.setSignature("force/fixed");
+    info.setSignature("iochannel/fd_haptic_device_fixed_force");
     
     info.addParameter(F_X);
     info.addParameter(F_Y);

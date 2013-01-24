@@ -30,6 +30,10 @@ public:
     explicit FDHapticDevice(const ParameterValueMap &parameters);
     ~FDHapticDevice();
     
+    void addChild(std::map<std::string, std::string> parameters,
+                  ComponentRegistryPtr reg,
+                  boost::shared_ptr<Component> child) MW_OVERRIDE;
+    
     bool initialize() MW_OVERRIDE;
     bool startDeviceIO() MW_OVERRIDE;
     bool stopDeviceIO() MW_OVERRIDE;

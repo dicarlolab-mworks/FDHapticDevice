@@ -49,6 +49,20 @@ FDHapticDevice::~FDHapticDevice() {
 }
 
 
+void FDHapticDevice::addChild(std::map<std::string, std::string> parameters,
+                              ComponentRegistryPtr reg,
+                              boost::shared_ptr<Component> child)
+{
+    boost::shared_ptr<Force> force = boost::dynamic_pointer_cast<Force>(child);
+    
+    if (!force) {
+        throw SimpleException(M_IODEVICE_MESSAGE_DOMAIN, "Invalid force type for Force Dimension haptic device");
+    }
+    
+    forceComponents.push_back(force);
+}
+
+
 bool FDHapticDevice::initialize() {
     int result = dhdOpen();
     
@@ -116,11 +130,6 @@ void FDHapticDevice::runLoop() {
             return;
         }
         
-        // Update position variables to reflect current position
-        pos_x->setValue(position.x());
-        pos_y->setValue(position.y());
-        pos_z->setValue(position.z());
-        
         Eigen::Vector3d velocity;
         if (dhdGetLinearVelocity(&(velocity.x()), &(velocity.y()), &(velocity.z()), deviceID) < 0) {
             logDHDError("Unable to get haptic device velocity");
@@ -139,6 +148,11 @@ void FDHapticDevice::runLoop() {
             logDHDError("Unable to set haptic device force");
             return;
         }
+        
+        // Update position variables to reflect current position
+        pos_x->setValue(position.x());
+        pos_y->setValue(position.y());
+        pos_z->setValue(position.z());
         
         // Give another thread a chance to terminate this one
         boost::this_thread::interruption_point();
